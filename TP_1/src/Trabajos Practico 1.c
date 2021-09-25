@@ -23,14 +23,14 @@ int main(void) {
 	int resultR;
 	float resultD;
 	int resultM;
-	int resultFA;
-	int resultFB;
+	long long int resultFA;
+	long long int resultFB;
 	int flag = 0;
 
 	do{
 		printf("X = %d\n", x);
-		printf("Y = %d", y);
-		respuesta = MenuGeneral("1. ingresar 1er operando\n","2. ingresar 2do operando\n","3. Calcular todas las operacion\n", "4. Informar resultados\n","","");
+		printf("Y = %d\n", y);
+		respuesta = MenuGeneral("1. ingresar 1er operando","2. ingresar 2do operando","3. Calcular todas las operacion", "4. Informar resultados","","");
 
 		switch (respuesta) {
 		case 1:
@@ -42,14 +42,27 @@ int main(void) {
 			scanf("%d", &y);
 			break;
 		case 3:
+			if(x == 0){
+				printf("no se ingreso Operador A, se recomienda ingresar uno:");
+				scanf("%d", &x);
+			}
+			if (y == 0){
+				printf("no se ingreso Operador B, se recomienda ingresar uno:");
+				scanf("%d", &y);
+			}
 			resultS = FSuma(x, y);
 			resultR = FResta(x,y);
 			if(y != 0){
 			resultD = FDivision(x, y);
 			}
 			resultM = FMultiplicacion(x, y);
+			if(x == 16){
 			resultFA = FFactorial(x);
+
+			}
+			if(y == 16){
 			resultFB = FFactorial(y);
+			}
 			flag = 1;
 			break;
 		case 4:
@@ -65,17 +78,17 @@ int main(void) {
 				}
 				printf("la multiplicacion de estos numeros es: %d\n", resultM);
 				if(x != 0){
-				printf("Factorial A es: %d\n",resultFA);
+				printf("Factorial A es: %lli\n",resultFA);
 				} else {
 					printf("Factorial A es: 0\n");
 				}
 				if(y != 0){
-				printf("Factorial B es: %d\n", resultFB);
+				printf("Factorial B es: %lli\n", resultFB);
 				} else {
 					printf("Factorial B es: 0\n");
 				}
 			}
-			flag = 2;
+			flag = 0;
 			break;
 		default :
 			printf("ha ingresado una opcion que no existe intente nuevamente\n");

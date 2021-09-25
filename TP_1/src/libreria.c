@@ -12,14 +12,13 @@
 int MenuGeneral(char mensaje1[], char mensaje2[], char mensaje3[], char mensaje4[], char mensaje5[], char mensaje6[]){
 
 	int respuesta;
-
-	printf("\ningrese una opcion (en numeros)...\n");
-	printf("%s", mensaje1);
-	printf("%s", mensaje2);
-	printf("%s", mensaje3);
-	printf("%s", mensaje4);
-	printf("%s", mensaje5);
-	printf("%s", mensaje6);
+	printf("%s\n", mensaje1);
+	printf("%s\n", mensaje2);
+	printf("%s\n", mensaje3);
+	printf("%s\n", mensaje4);
+	printf("%s\n", mensaje5);
+	printf("%s\n", mensaje6);
+	printf("ingrese una opcion (en numeros)...\n");
 	printf("o ingrese 0 para salir\n");
 	setbuf(stdin, NULL);
 	scanf("%d", &respuesta);

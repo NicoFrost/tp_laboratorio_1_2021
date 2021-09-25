@@ -40,13 +40,12 @@ int FMultiplicacion(int x,int y){
 	return resultado;
 }
 
-int FFactorial(int numeroFactorear){
-	int resultado = 0;
+long long int FFactorial(int numeroFactorear){
+	signed long int resultado = 0;
 	int F;
 
 	if(numeroFactorear != 0){
 	F = numeroFactorear;
-
 	for(int n = 1;n < F;n++){
 	numeroFactorear = numeroFactorear*n;
 	}
