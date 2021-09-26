@@ -12,7 +12,7 @@ int FSuma(int x,int y);
 int FResta(int x,int y);
 float FDivision(int x,int y);
 int FMultiplicacion(int x,int y);
-long long int FFactorial(int numeroFactorear);
+int FFactorial(int numeroFactorear);
 
 /// \fn int FSuma(int x,int y);
 /// \brief la funcion suma dos numeros "X" y "Y"

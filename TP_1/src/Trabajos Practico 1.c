@@ -23,8 +23,8 @@ int main(void) {
 	int resultR;
 	float resultD;
 	int resultM;
-	long long int resultFA;
-	long long int resultFB;
+	int resultFA;
+	int resultFB;
 	int flag = 0;
 
 	do{
@@ -56,13 +56,8 @@ int main(void) {
 			resultD = FDivision(x, y);
 			}
 			resultM = FMultiplicacion(x, y);
-			if(x == 16){
 			resultFA = FFactorial(x);
-
-			}
-			if(y == 16){
 			resultFB = FFactorial(y);
-			}
 			flag = 1;
 			break;
 		case 4:
@@ -78,12 +73,21 @@ int main(void) {
 				}
 				printf("la multiplicacion de estos numeros es: %d\n", resultM);
 				if(x != 0){
-				printf("Factorial A es: %lli\n",resultFA);
+					if(x > 17){
+						printf("Factorial limite pasado(16)\n");
+					} else {
+						printf("Factorial A es: %d\n",resultFA);
+					}
+
 				} else {
 					printf("Factorial A es: 0\n");
 				}
 				if(y != 0){
-				printf("Factorial B es: %lli\n", resultFB);
+					if(y > 17){
+						printf("Factorial limite pasado(16)\n");
+					} else {
+						printf("Factorial B es: %d\n", resultFB);
+					}
 				} else {
 					printf("Factorial B es: 0\n");
 				}
