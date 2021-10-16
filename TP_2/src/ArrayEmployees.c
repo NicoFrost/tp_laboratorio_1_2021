@@ -168,7 +168,7 @@ int printEmployees(Employee* list, int length)
 			printf("| %04d | %s %s $%.2f %d |\n",list[i].id,list[i].name,list[i].lastName,list[i].salary,list[i].sector);
 		}
 	}
-	printf("\n-----------------------------------------");
+	printf("-----------------------------------------\n");
  return 0;
 
 }
