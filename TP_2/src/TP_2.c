@@ -42,8 +42,7 @@ int main(void){
 	int Iaux,i,j;
 	float fAux;
 	char cadenaAux[51];
-	int sumaSalario = 0;
-	float promedio;
+
 
 
 	for(int i = 0;i < TAM;i++){
@@ -147,31 +146,7 @@ int main(void){
 						//4.1 FIN
 							break;
 						case 2:
-							//4.2 INICIO
-							contador = 0;
-							//inicializacion hecha porque aun no es funcion
-							sumaSalario = 0;
-							promedio = 0;
-
-							for(int x = 0;x < TAM;x++){
-								if(Empleado[x].isEmpty == 1){
-									sumaSalario += Empleado[x].salary;
-									contador++;
-								}
-							}
-							promedio = sumaSalario / contador;
-									contador = 0;
-							for(int x = 0;x < TAM;x++){
-								if(Empleado[x].isEmpty == 1 && Empleado[x].salary > promedio){
-									contador++;
-								}
-							}
-							printf("-----SALARIO-----\n");
-							printf("|TOTAL:    $%04d  \n", sumaSalario);
-							printf("|PROMEDIO: $%04.2f  \n", promedio);
-							printf("|empleados superando promedio: %d\n",contador);
-							printf("-----------------");
-							//4.2 FIN
+							MostrarSalarios(Empleado, TAM);
 							break;
 					}
 				}while(subRespuesta != 0);

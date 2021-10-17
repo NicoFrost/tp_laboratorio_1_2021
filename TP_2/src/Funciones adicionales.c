@@ -57,4 +57,32 @@ void VerifEntero(int* retorno,char mensaje[],char errormensaje[]){
 	}
 
 	*retorno = atoi(cadenaAux);
+
+}
+//Funcion hecha para no mostrar todo en el Main
+void MostrarSalarios(Employee* Empleado, int len)
+{
+	int contador;
+	//inicializacion hecha porque aun no es funcion
+	int sumaSalario;
+	float promedio;
+
+	for(int x = 0;x < len;x++){
+		if(Empleado[x].isEmpty == 1){
+			sumaSalario += Empleado[x].salary;
+			contador++;
+		}
+	}
+	promedio = sumaSalario / contador;
+	contador = 0;
+	for(int x = 0;x < len;x++){
+		if(Empleado[x].isEmpty == 1 && Empleado[x].salary > promedio){
+			contador++;
+		}
+	}
+	printf("-----SALARIO-----\n");
+	printf("|TOTAL:    $%04d  \n", sumaSalario);
+	printf("|PROMEDIO: $%04.2f  \n", promedio);
+	printf("|empleados superando promedio: %d\n",contador);
+	printf("-----------------");
 }

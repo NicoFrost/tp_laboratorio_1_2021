@@ -12,6 +12,10 @@
 
 int buscarEspacioLibre(Employee* list,int len);
 int BusquedaID(Employee* Empleado,int len);
+
 void VerifFlotante(float* retorno, char mensaje[], char errorMensaje[]);
 void VerifEntero(int* retorno,char mensaje[],char errormensaje[]);
+
+void MostrarSalarios(Employee* Empleado, int len);
+
 #endif /* FUNCIONES_ADICIONALES_H_ */

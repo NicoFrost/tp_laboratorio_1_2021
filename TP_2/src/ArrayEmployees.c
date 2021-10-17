@@ -1,6 +1,5 @@
 #include "ArrayEmployees.h"
 #include "Funciones adicionales.h"
-#include "libreria.h"
 
 int initEmployees(Employee* list, int len)
 {
