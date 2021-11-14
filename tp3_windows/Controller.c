@@ -139,8 +139,13 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
+	int order;
 	//llamar a funcion ordenar le llevamos el linkedlist
-	ordenarEmpleados(pArrayListEmployee,0);
+	printf("como ordenar?\n1.ID\n2.NOMBRE");
+	scanf("%d",&order);
+	while(isdigit(order));
+	printf("Ordenado!");
+	ordenarEmpleados(pArrayListEmployee,order);
     return 1;
 }
 
@@ -176,8 +181,8 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
  */
 int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee)
 {
-	controller_saveAsText(path, pArrayListEmployee);
-//	ordenarEmpleados(pArrayListEmployee, 1);
+//	controller_saveAsText(path, pArrayListEmployee);
+	ordenarEmpleados(pArrayListEmployee, 1);
 	FILE *pArchivo;
 
 	pArchivo = fopen(path,"wb");

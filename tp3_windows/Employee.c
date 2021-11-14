@@ -4,6 +4,7 @@
 #include <string.h>
 #include <ctype.h>
 #include "Employee.h"
+#include "libreria.h"
 #include "LinkedList.h"
 #include "parser.h"
 
@@ -104,6 +105,11 @@ Employee* employee_new(){
 	do{
 		printf("ingrese Nombre: ");
 		scanf("%s",bufferNombre);
+		while(SoloLetras(bufferNombre) == 0){
+			printf("ingrese Nombre (SIN NUMEROS!): ");
+			scanf("%s",bufferNombre);
+		}
+		NombresInicioMayus(&bufferNombre, strlen(bufferNombre));
 		printf("ingrese Horas Trabajadas: ");
 		scanf("%d",&bufferHoras);
 		printf("ingrese Sueldo del Empleado: ");
@@ -340,7 +346,6 @@ void ordenarEmpleados(LinkedList* lista,int order){
 
 	tam = ll_len(lista);
 	//preguntar orden buscado
-	printf("Ordenado!");
 //		printf("Como desea ordenar los empleados?\n1.NOMBRE\n2.HORAS LABORALES\n3.SUELDO");
 //		scanf("%d",&ordenamiento);
 //		switch (ordenamiento){
@@ -360,7 +365,7 @@ void ordenarEmpleados(LinkedList* lista,int order){
 //			scanf("%d",mayores);
 //		}
 			//burbujeo
-	if(order == 0){
+	if(order == 2){
 		for(i = 0; i < tam-1;i++){
 			//BufferCompA = ll_get(lista, i);
 			bufferCompA = ll_get(lista, i);
@@ -412,14 +417,15 @@ void ordenarEmpleados(LinkedList* lista,int order){
 			}
 		}
 	} else {
-			if(order == 0){
+			if(order == 1){
 				for(i = 0; i < tam-1;i++){
+					bufferCompA = ll_get(lista, i);
 					employee_getId(bufferCompA, &idEmpA);
 					for(j = i+1; j < tam;j++){
 						bufferCompB = ll_get(lista, j);
 						//obtener el ID del compA y del compB
 						employee_getId(bufferCompB, &idEmpB);
-					if(idEmpA < idEmpB){
+					if(idEmpA > idEmpB){
 					//seteo ID,Nombre,Horas,Sueldo
 						//strAux = A
 						employee_getNombre(bufferCompA, strAux);
